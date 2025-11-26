@@ -102,8 +102,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
         {/* Footer */}
         <div className="p-4 border-t-2 border-retro-border bg-retro-gray shrink-0">
           <div className="text-xs font-mono text-slate-500 text-center border-2 border-dashed border-slate-400 p-2 bg-white">
-            SYS.READY<br/>
-            MEMORY OK
+            Created by<br/>
+            <a href="https://bravohenry.com" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-retro-primary">Zihan Huang</a>
           </div>
         </div>
       </div>
