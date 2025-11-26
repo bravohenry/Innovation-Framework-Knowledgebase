@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DMGT Toolkit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'retro-bg': '#f8fafc',      // Very light cool grey for page background
+              'retro-surface': '#ffffff', // Pure white for cards/content
+              'retro-border': '#000000',  // Black for borders
+              'retro-primary': '#2563eb', // Royal Blue (Action/Active)
+              'retro-secondary': '#fcd34d', // Warm Yellow (Highlight)
+              'retro-accent': '#f43f5e',  // Rose/Red (Alert/Badge)
+              'retro-gray': '#e2e8f0',    // UI Chrome Grey
+              'retro-gray-dark': '#94a3b8',
+            },
+            fontFamily: {
+              mono: ['"Courier New"', 'Courier', 'monospace'],
+              sans: ['"Inter"', '"Verdana"', 'sans-serif'], // Inter/Verdana is very readable
+            },
+            boxShadow: {
+              'hard': '4px 4px 0 0 #000000',
+              'hard-sm': '2px 2px 0 0 #000000',
+              'hard-hover': '6px 6px 0 0 #000000',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f8fafc;
+        /* Subtle dot pattern instead of busy grid */
+        background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+        background-size: 24px 24px;
+        color: #0f172a;
+      }
+      
+      /* Typography overrides for Retro feel */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        color: #000;
+      }
+
+      /* Custom scrollbar - cleaner look */
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #e2e8f0;
+        border-left: 2px solid black;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2563eb; 
+        border: 2px solid black;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #1d4ed8; 
+      }
+      
+      /* Prose Overrides for readability */
+      .prose {
+        color: #1e293b; /* Slate 800 */
+        font-family: 'Inter', 'Verdana', sans-serif;
+      }
+      .prose h2 {
+        border-bottom: 2px solid black !important;
+        color: black !important;
+        margin-top: 2em !important;
+        padding-bottom: 0.5em !important;
+      }
+      /* STRICT STYLING FOR H3 TO ENSURE LINE BREAK EFFECT */
+      .prose h3 {
+        color: #000 !important;
+        font-family: 'Courier New', Courier, monospace !important;
+        font-size: 1.1em !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        border-bottom: 2px solid #e2e8f0; /* Visual separator */
+        padding-bottom: 0.5rem !important;
+        margin-top: 2.5rem !important;
+        margin-bottom: 1rem !important;
+        display: block;
+        width: 100%;
+      }
+      .prose strong {
+        color: #000 !important;
+        background-color: #fcd34d; /* Highlighter yellow */
+        padding: 0 4px;
+        font-weight: 700;
+      }
+      .prose ul > li::marker {
+        color: #2563eb !important;
+        content: '■ ';
+        font-size: 0.8em;
+      }
+      .prose a {
+        color: #2563eb !important;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      .prose a:hover {
+        background-color: #2563eb;
+        color: white !important;
+        text-decoration: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+</head>
+  <body class="antialiased h-screen overflow-hidden">
+    <div id="root"></div>
+  </body>
+</html>
