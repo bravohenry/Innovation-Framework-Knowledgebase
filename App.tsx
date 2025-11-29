@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Sidebar } from './components/Sidebar';
@@ -5,6 +6,7 @@ import { Header } from './components/Header';
 import { FrameworkView } from './components/FrameworkView';
 import { WelcomeView } from './components/WelcomeView';
 import { ChapterView } from './components/ChapterView';
+import { LandingPage } from './components/LandingPage';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { frameworks } from './data/frameworks';
 
@@ -72,8 +74,16 @@ const Layout = () => {
 };
 
 export default function App() {
+  const [showLanding, setShowLanding] = useState(true);
+
   return (
     <LanguageProvider>
+      {/* Landing Page Overlay */}
+      {showLanding && (
+        <LandingPage onEnter={() => setShowLanding(false)} />
+      )}
+
+      {/* Main App */}
       <HashRouter>
         <Layout />
       </HashRouter>
